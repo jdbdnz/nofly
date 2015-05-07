@@ -1,0 +1,15 @@
+= Nofly
+
+== What is it?
+
+Nofly wraps communications about a particular event on an object in a managable and scalable structure.
+
+== Tell me more!
+
+When we send communications to users it is usually in response to an event. Users often have their own communications preferences (when/how/what).
+
+This logic can easily become complicated and so I developed Nofly to abstract it and let the core application only worry about knowing what event happened to which object/record. 
+
+==  Is using Nofly a good experience?
+
+I want it to be! Basically, in your controller (or maybe an observer or wherever you think is best) we do something like <i>Nofly.for( @sandwich ).eat</i> and then we create *notify_for_sandwich.cs* which has a function *eat* in which we do all our notification logic - i.e. check user preferences and send emails, in-app notifications, push notifications, etc.
