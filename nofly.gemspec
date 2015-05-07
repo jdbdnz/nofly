@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Nofly::VERSION
   s.authors     = ["Josh Dean", "Chalkle.com"]
   s.email       = ["jdbdean@gmail.com"]
-  s.homepage    = "http://github.com/Jdbdean/nofly"
+  s.homepage    = "https://github.com/Jdbdean/nofly"
   s.summary     = "Nofly - don't write notifications on the fly. Nofly wraps communications about a particular event on an object so you can write managable code."
   s.description = "When we send communications to users it is usually in response to an event. Users often have their own communications preferences (when/how/what). This logic can easily become complicated and so I developed Nofly to abstract it and let the core application only worry about knowing what event happened to which object/record."
   s.license     = "MIT"
