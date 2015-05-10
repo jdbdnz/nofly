@@ -13,3 +13,7 @@ This logic can easily become complicated and so I developed Nofly to abstract it
 ==  Is using Nofly a good experience?
 
 I want it to be! Basically, in your controller (or maybe an observer or wherever you think is best) we do something like <i>Nofly.for( @sandwich ).eat</i> and then we create *notify_for_sandwich.cs* which has a function *eat* in which we do all our notification logic - i.e. check user preferences and send emails, in-app notifications, push notifications, etc.
+
+== Installation
+
+Add an autoload path for the directory you'll keep your nofly <i> config.autoload_paths += Dir["#{config.root}/app/nofly"] </i> to *application.rb*
