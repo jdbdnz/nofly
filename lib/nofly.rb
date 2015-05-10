@@ -1,7 +1,5 @@
-require 'nofly/event_library'
-
 module Nofly
-
+  require 'nofly/event_library'
   def self.for(obj, options = {})
     begin
       Nofly.const_get("#{obj.class.to_s}Nofly").new(obj, options)
