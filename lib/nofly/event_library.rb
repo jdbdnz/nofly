@@ -9,7 +9,7 @@ class Nofly::EventLibrary
 
   def method_missing(method, *args, &block)
     # enables 'foo' to return @obj if it is an instance of the Foo class
-    return @obj if @obj.class.to_s == method
+    return @obj if @obj.class.to_s.downcase.to_sym == method
 
     # access options' keys as if they were local variables
     if @options[method] || @options[method.to_sym] 
