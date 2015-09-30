@@ -2,18 +2,36 @@
 
 == What is it?
 
-Nofly wraps communications about a particular event on an object in a managable and scalable structure.
+Nofly takes your logic for emails and other notifications out of the controller and put it into its own context
 
-== Tell me more!
+== Why would you do that?
 
 When we send communications to users it is usually in response to an event. Users often have their own communications preferences (when/how/what).
 
 This logic can easily become complicated and so I developed Nofly to abstract it and let the core application only worry about knowing what event happened to which object/record. 
 
-==  Is using Nofly a good experience?
+==  Example
 
-I want it to be! Basically, in your controller (or maybe an observer or wherever you think is best) we do something like <i>Nofly.for( @sandwich ).eat</i> and then we create *notify_for_sandwich.cs* which has a function *eat* in which we do all our notification logic - i.e. check user preferences and send emails, in-app notifications, push notifications, etc.
+    class FooController < ApplicationController
+    
+      def bar
+        @foo = Foo.create foo_params 
+        Nofly.for(@foo).bar
+      end
+    
+    end
+
+    class FooNofly < Nofly::EventLibrary
+      // check user preferences 
+      // send emails, 
+      // send push notifications
+      // etc.
+    end
 
 == Installation
 
 Add an autoload path for the directory you'll keep your nofly <i> config.autoload_paths += Dir["#{config.root}/app/nofly"] </i> to *application.rb*
+
+== Explain the name
+
+Notifications shouldn't be done on the fly, and Ruby gems already has a 'Notifly'
